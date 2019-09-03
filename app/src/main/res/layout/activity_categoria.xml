@@ -71,8 +71,6 @@
         </EditText>
     </LinearLayout>
 
-
-
     <LinearLayout
         android:layout_marginTop="35dp"
         android:orientation="horizontal"
@@ -80,6 +78,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:padding="10dp"
             android:text="Adicionar"
             android:id="@+id/btnAdicionarCategoria"
             android:backgroundTint="@color/colorAccent"
@@ -90,6 +89,7 @@
 
         </Button>
         <Button
+            android:padding="10dp"
             android:text="Sair"
             android:id="@+id/btnSair"
             android:backgroundTint="@color/colorPrimary"
