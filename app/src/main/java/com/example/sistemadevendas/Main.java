@@ -20,7 +20,7 @@ public class Main extends AppCompatActivity {
 
         //region Todos os botões
         btnCategoria = findViewById(R.id.btnCategoria);
-        btnCat = findViewById(R.id.btnCat);
+        btnCat = findViewById(R.id.btnVisCat);
         btnFab = findViewById(R.id.btnFab);
         btnFabricante = findViewById(R.id.btnFabricante);
         btnProdutos = findViewById(R.id.btnProdutos);

@@ -74,7 +74,7 @@
             android:background="@drawable/btncustom"
             android:backgroundTint="@color/colorAccent"
             android:text="Visualizar Categoria"
-            android:id="@+id/btnCat"
+            android:id="@+id/btnVisCat"
             android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_width="100dp"
