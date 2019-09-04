@@ -16,8 +16,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:textColor="#001EC2"
-            android:text="Sistema de Vendas">
+            android:textColor="#FF5722"
+            android:text="Vendas DesignArtt">
 
         </TextView>
     </LinearLayout>
