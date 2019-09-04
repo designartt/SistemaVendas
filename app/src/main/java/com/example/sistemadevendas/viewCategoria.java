@@ -3,9 +3,12 @@ package com.example.sistemadevendas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -52,6 +55,22 @@ public class viewCategoria extends AppCompatActivity {
             listCategorias.invalidateViews();
         }
 
+        listCategorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                String aaa;
+                int position = 0;
+                aaa = title.get(position).toString();
+                cate ca = catee.get((position));
+
+                Intent in = new Intent(getApplicationContext(), EditarCategoria.class);
+                in.putExtra("id", ca.id);
+                in.putExtra("categoria", ca.categoria);
+                in.putExtra("descricao", ca.descricao);
+
+                startActivity(in);
+            }
+        });
 
     }
 }
