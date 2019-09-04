@@ -28,7 +28,6 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:padding="10dp"
             android:text="Categoria"
             android:id="@+id/btnCategoria"
             android:background="@drawable/btncustom"
@@ -40,7 +39,6 @@
 
         </Button>
         <Button
-            android:padding="10dp"
             android:text="Fabricante"
             android:id="@+id/btnFabricante"
             android:layout_margin="10dp"
@@ -52,7 +50,6 @@
 
         </Button>
         <Button
-            android:padding="10dp"
             android:text="Produtos"
             android:id="@+id/btnProdutos"
             android:layout_margin="10dp"
@@ -73,7 +70,6 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:padding="10dp"
             android:background="@drawable/btncustom"
             android:backgroundTint="@color/colorAccent"
             android:text="Visualizar Categoria"
@@ -85,7 +81,6 @@
 
         </Button>
         <Button
-            android:padding="10dp"
             android:text="Visualizar Fabricante"
             android:id="@+id/btnFab"
             android:layout_margin="10dp"
@@ -97,7 +92,6 @@
 
         </Button>
         <Button
-            android:padding="10dp"
             android:text="Visualizar Produtos"
             android:id="@+id/btnProd"
             android:layout_margin="10dp"
@@ -118,7 +112,6 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:padding="10dp"
             android:text="Venda"
             android:id="@+id/btnVendas"
             android:background="@drawable/btncustom"
@@ -130,7 +123,6 @@
 
         </Button>
         <Button
-            android:padding="10dp"
             android:text="Visualizar Vendas"
             android:id="@+id/btnVisualizaVendas"
             android:layout_margin="10dp"
@@ -142,7 +134,6 @@
 
         </Button>
         <Button
-            android:padding="10dp"
             android:text="Usuários"
             android:id="@+id/btnUsuarioVendas"
             android:layout_margin="10dp"
@@ -164,7 +155,6 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:padding="10dp"
             android:text="Sair"
             android:id="@+id/btnSairVendas"
             android:backgroundTint="#FF5722"
