@@ -158,7 +158,7 @@
         <Button
             android:text="Sair"
             android:id="@+id/btnSairVendas"
-            android:backgroundTint="#FF5722"
+            android:backgroundTint="#B60000"
             android:background="@drawable/btnsairvendas"
             android:textColor="#ffffff"
             android:layout_margin="10dp"
