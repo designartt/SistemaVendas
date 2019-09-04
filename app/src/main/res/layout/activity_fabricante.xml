@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".login">
+    tools:context=".Fabricante">
 
     <LinearLayout
         android:layout_marginBottom="35dp"
@@ -16,31 +16,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:textColor="#FF5722"
-            android:text="Vendas DesignArtt">
+            android:textColor="#001EC2"
+            android:text="Cadastrar Fabricante">
 
         </TextView>
     </LinearLayout>
+
+
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Usuário:">
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Categorias">-->
 
-        </TextView>
+        <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/user"
+            android:id="@+id/edtFabricante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:text="luiz"
+            android:hint="Nome Fabricante"
             android:textAlignment="center">
 
         </EditText>
@@ -50,21 +52,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Senha:">
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Descrição">-->
 
-        </TextView>
+        <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/edtSobreFabricante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:password="true"
-            android:text="123"
+            android:hint="Sobre o Fabricante"
             android:textAlignment="center">
 
         </EditText>
@@ -77,8 +78,9 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:text="Login"
-            android:id="@+id/btnLogin"
+            android:padding="10dp"
+            android:text="Adicionar"
+            android:id="@+id/btnAdicionarFabricante"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/btnlogin"
             android:textColor="#ffffff"
@@ -87,6 +89,7 @@
 
         </Button>
         <Button
+            android:padding="10dp"
             android:text="Sair"
             android:id="@+id/btnSair"
             android:backgroundTint="@color/colorAccent"
@@ -99,6 +102,5 @@
 
 
     </LinearLayout>
-
 
 </LinearLayout>

@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class Main extends AppCompatActivity {
 
-    Button btnCategoria, btnFabricante, btnProdutos, btnCat, btnFab, btnProd, btnVendas,
-            btnVisualizaVendas, btnUsuarioVendas, btnSairVendas;
+    Button btnCategoria, btnFabricante, btnProdutos, btnViewCategoria, btnFab, btnProd, btnVendas,
+            btnVisualizaVendas, btnUsuarioVendas, btnSairVendas, btnAdicionarFabricante;
 
 
     @Override
@@ -20,7 +20,7 @@ public class Main extends AppCompatActivity {
 
         //region Todos os botões
         btnCategoria = findViewById(R.id.btnCategoria);
-        btnCat = findViewById(R.id.btnVisCat);
+        btnViewCategoria = findViewById(R.id.btnVisCat);
         btnFab = findViewById(R.id.btnFab);
         btnFabricante = findViewById(R.id.btnFabricante);
         btnProdutos = findViewById(R.id.btnProdutos);
@@ -38,7 +38,7 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnCat.setOnClickListener(new View.OnClickListener() {
+        btnViewCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Main.this, viewCategoria.class);
@@ -52,6 +52,15 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnFabricante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main.this, Fabricante.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".login">
+    tools:context=".editarfabricante">
 
     <LinearLayout
         android:layout_marginBottom="35dp"
@@ -16,8 +16,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:textColor="#FF5722"
-            android:text="Vendas DesignArtt">
+            android:textColor="#001EC2"
+            android:text="Editar / Deletar Fabricante">
 
         </TextView>
     </LinearLayout>
@@ -27,20 +27,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Usuário:">
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Categorias">-->
 
-        </TextView>
+        <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/user"
+            android:id="@+id/edtFabId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:text="luiz"
+            android:hint="ID"
+            android:textAlignment="center">
+
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Categorias">-->
+
+        <!--        </TextView>-->
+
+        <EditText
+            android:id="@+id/edtFabNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Nome Fabricante"
             android:textAlignment="center">
 
         </EditText>
@@ -50,21 +74,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Senha:">
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Descrição">-->
 
-        </TextView>
+        <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/edtFabSobre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:password="true"
-            android:text="123"
+            android:hint="Sobre Fabricante"
             android:textAlignment="center">
 
         </EditText>
@@ -77,8 +100,9 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:text="Login"
-            android:id="@+id/btnLogin"
+            android:padding="10dp"
+            android:text="Editar"
+            android:id="@+id/btnFabEditar"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/btnlogin"
             android:textColor="#ffffff"
@@ -87,9 +111,21 @@
 
         </Button>
         <Button
-            android:text="Sair"
-            android:id="@+id/btnSair"
+            android:padding="10dp"
+            android:text="Deletar"
+            android:id="@+id/btnFabDeletar"
             android:backgroundTint="@color/colorAccent"
+            android:background="@drawable/btndeletar"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+        <Button
+            android:padding="10dp"
+            android:text="Cancelar"
+            android:id="@+id/btnFabCancelar"
+            android:backgroundTint="#666666"
             android:background="@drawable/btnsairlogin"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
@@ -99,6 +135,5 @@
 
 
     </LinearLayout>
-
 
 </LinearLayout>
