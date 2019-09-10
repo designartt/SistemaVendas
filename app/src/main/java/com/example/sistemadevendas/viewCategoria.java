@@ -61,7 +61,7 @@ public class viewCategoria extends AppCompatActivity {
                 String aaa;
                 int position = 0;
                 aaa = title.get(position).toString();
-                cate ca = catee.get((position));
+                cate ca = catee.get((i));
 
                 Intent in = new Intent(getApplicationContext(), EditarCategoria.class);
                 in.putExtra("id", ca.id);

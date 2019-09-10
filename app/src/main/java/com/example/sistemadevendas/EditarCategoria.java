@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class EditarCategoria extends AppCompatActivity {
 
     EditText edtID, edtCategoria, edtDescricao;
-    Button btnCatEditar, btnCatDeletar, btnCatCancelar;
+    Button btnEditar, btnDeletar, btnCancelar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,9 @@ public class EditarCategoria extends AppCompatActivity {
         edtDescricao = findViewById(R.id.edtDescricao);
 
 //        Setando os ids do Button
-        btnCatEditar = findViewById(R.id.btnCatEditar);
-        btnCatCancelar = findViewById(R.id.btnCatCancelar);
-        btnCatDeletar = findViewById(R.id.btnCatDeletar);
+        btnEditar = findViewById(R.id.btnEditar);
+        btnCancelar = findViewById(R.id.btnCancelar);
+        btnDeletar = findViewById(R.id.btnDeletar);
 
         Intent in = getIntent();
 
@@ -43,21 +43,21 @@ public class EditarCategoria extends AppCompatActivity {
         edtCategoria.setText(categoria);
         edtDescricao.setText(descricao);
 
-        btnCatEditar.setOnClickListener(new View.OnClickListener() {
+        btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditarCategoria();
             }
         });
 
-        btnCatDeletar.setOnClickListener(new View.OnClickListener() {
+        btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DeletarCategoria();
             }
         });
 
-        btnCatCancelar.setOnClickListener(new View.OnClickListener() {
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent( getApplicationContext(), Main.class);
@@ -70,7 +70,7 @@ public class EditarCategoria extends AppCompatActivity {
     public void EditarCategoria() {
 
         try {
-            String id = edtID.getText().toString();
+            int id = Integer.parseInt(edtID.getText().toString());
             String categoria = edtCategoria.getText().toString();
             String descricao = edtDescricao.getText().toString();
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
@@ -79,12 +79,12 @@ public class EditarCategoria extends AppCompatActivity {
             SQLiteStatement statement = db.compileStatement(sql);
             statement.bindString(1, categoria);
             statement.bindString(2, descricao);
-            statement.bindString(3, id);
+            statement.bindLong(3, id);
             statement.execute();
 
             Toast.makeText(this, "Atualizado com sucesso!!!", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(getApplicationContext(), Main.class);
+            Intent intent = new Intent(getApplicationContext(), viewCategoria.class);
             startActivity(intent);
 
         } catch (Exception ex) {

@@ -102,7 +102,7 @@
         <Button
             android:padding="10dp"
             android:text="Editar"
-            android:id="@+id/btnCatEditar"
+            android:id="@+id/btnEditar"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/btnlogin"
             android:textColor="#ffffff"
@@ -113,7 +113,7 @@
         <Button
             android:padding="10dp"
             android:text="Deletar"
-            android:id="@+id/btnCatDeletar"
+            android:id="@+id/btnDeletar"
             android:backgroundTint="@color/colorAccent"
             android:background="@drawable/btndeletar"
             android:textColor="#ffffff"
@@ -124,7 +124,7 @@
         <Button
             android:padding="10dp"
             android:text="Cancelar"
-            android:id="@+id/btnCatCancelar"
+            android:id="@+id/btnCancelar"
             android:backgroundTint="#666666"
             android:background="@drawable/btnsairlogin"
             android:textColor="#ffffff"
