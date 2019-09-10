@@ -41,14 +41,14 @@ public class Main extends AppCompatActivity {
         btnViewCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main.this, viewCategoria.class);
+                Intent intent = new Intent(getApplicationContext(), viewCategoria.class);
                 startActivity(intent);
             }
         });
         btnSairVendas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main.this, login.class);
+                Intent intent = new Intent(getApplicationContext(), login.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class Main extends AppCompatActivity {
         btnFabricante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main.this, Fabricante.class);
+                Intent intent = new Intent(getApplicationContext(), Fabricante.class);
                 startActivity(intent);
             }
         });

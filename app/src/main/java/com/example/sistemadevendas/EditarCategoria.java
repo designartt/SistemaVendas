@@ -75,7 +75,7 @@ public class EditarCategoria extends AppCompatActivity {
             String descricao = edtDescricao.getText().toString();
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
 
-            String sql = "update categoria set categoria = ?, descricao = ? where id = ?";
+            String sql = "update categoria set categoria = ?, descricao = ? where id = ?;";
             SQLiteStatement statement = db.compileStatement(sql);
             statement.bindString(1, categoria);
             statement.bindString(2, descricao);
