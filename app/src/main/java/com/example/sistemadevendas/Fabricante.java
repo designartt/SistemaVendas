@@ -24,10 +24,10 @@ public class Fabricante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fabricante);
 
-        edtNome = findViewById(R.id.edtFabricante);
-        edtDescricao = findViewById(R.id.edtSobreFabricante);
+        edtNome = findViewById(R.id.edtCategoria);
+        edtDescricao = findViewById(R.id.edtDescricao);
 
-        btnAdicionar = findViewById(R.id.btnAdicionar);
+        btnAdicionar = findViewById(R.id.btnAdicionarCategoria);
         btnSair = findViewById(R.id.btnSair);
 
         btnSair.setOnClickListener(new View.OnClickListener() {
