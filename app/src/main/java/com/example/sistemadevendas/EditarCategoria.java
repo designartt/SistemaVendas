@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class EditarCategoria extends AppCompatActivity {
 
-    EditText edtCatId, edtCategoria, edtDescricao;
+    EditText edtID, edtCategoria, edtDescricao;
     Button btnCatEditar, btnCatDeletar, btnCatCancelar;
 
     @Override
@@ -23,7 +23,7 @@ public class EditarCategoria extends AppCompatActivity {
         setContentView(R.layout.activity_editarcategoria);
 
 //        Setando os ids dos EditText
-        edtCatId = findViewById(R.id.edtCatId);
+        edtID = findViewById(R.id.edtCatId);
         edtCategoria = findViewById(R.id.edtCategoria);
         edtDescricao = findViewById(R.id.edtDescricao);
 
@@ -39,7 +39,7 @@ public class EditarCategoria extends AppCompatActivity {
         String descricao = in.getStringExtra("descricao").toString();
 
 
-        edtCatId.setText(id);
+        edtID.setText(id);
         edtCategoria.setText(categoria);
         edtDescricao.setText(descricao);
 
@@ -70,7 +70,7 @@ public class EditarCategoria extends AppCompatActivity {
     public void EditarCategoria() {
 
         try {
-            String id = edtCatId.getText().toString();
+            String id = edtID.getText().toString();
             String categoria = edtCategoria.getText().toString();
             String descricao = edtDescricao.getText().toString();
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
@@ -94,7 +94,7 @@ public class EditarCategoria extends AppCompatActivity {
 
     public void DeletarCategoria(){
         try{
-            String id = edtCatId.getText().toString();
+            String id = edtID.getText().toString();
 
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
             String sql = "delete from categoria where id=?";

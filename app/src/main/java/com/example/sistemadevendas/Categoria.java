@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class Categoria extends AppCompatActivity {
 
     EditText edtCategoria, edtDescricao;
-    Button btnAdicionarCategoria, btnSair;
+    Button btnAdicionar, btnSair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +25,18 @@ public class Categoria extends AppCompatActivity {
         edtCategoria = findViewById(R.id.edtCategoria);
         edtDescricao = findViewById(R.id.edtDescricao);
 
-        btnAdicionarCategoria = findViewById(R.id.btnAdicionarCategoria);
+        btnAdicionar = findViewById(R.id.btnAdicionarCategoria);
         btnSair = findViewById(R.id.btnSair);
 
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Categoria.this, Main.class);
+                Intent intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(intent);
             }
         });
 
-        btnAdicionarCategoria.setOnClickListener(new View.OnClickListener() {
+        btnAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 insert();
