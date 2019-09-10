@@ -50,27 +50,63 @@ public class EditarCategoria extends AppCompatActivity {
             }
         });
 
+        btnCatDeletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DeletarCategoria();
+            }
+        });
+
+        btnCatCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent( getApplicationContext(), Main.class);
+                startActivity(i);
+            }
+        });
+
     }
 
-    public void EditarCategoria(){
-        try{
+    public void EditarCategoria() {
+
+        try {
             String id = edtCatId.getText().toString();
             String categoria = edtCategoria.getText().toString();
             String descricao = edtDescricao.getText().toString();
-
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
-            String sql = "update categoria set categoria = ?,descricao = ? where id=?";
+
+            String sql = "update categoria set categoria = ?, descricao = ? where id = ?";
             SQLiteStatement statement = db.compileStatement(sql);
             statement.bindString(1, categoria);
             statement.bindString(2, descricao);
             statement.bindString(3, id);
             statement.execute();
-            Toast.makeText(this, "Cadastrado atualizada com Sucesso.", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "Atualizado com sucesso!!!", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(getApplicationContext(), Main.class);
+            startActivity(intent);
+
+        } catch (Exception ex) {
+            Toast.makeText(this, "Categoria não atualizada.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void DeletarCategoria(){
+        try{
+            String id = edtCatId.getText().toString();
+
+            SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
+            String sql = "delete from categoria where id=?";
+            SQLiteStatement statement = db.compileStatement(sql);
+            statement.bindString(1, id);
+            statement.execute();
+            Toast.makeText(this, "Cadastrado deletado com Sucesso.", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(getApplicationContext(), Main.class);
             startActivity(i);
         } catch (Exception ex){
-            Toast.makeText(this, "Não atualizado!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Categoria não deletada!", Toast.LENGTH_SHORT).show();
         }
     }
 }
