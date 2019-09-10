@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textSize="30dp"
             android:textColor="#001EC2"
-            android:text="VENDAS">
+            android:text="Sistema de Vendas">
 
         </TextView>
     </LinearLayout>
@@ -158,9 +158,9 @@
         <Button
             android:text="Sair"
             android:id="@+id/btnSairVendas"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="#B60000"
             android:background="@drawable/btnsairvendas"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_width="100dp"
             android:layout_height="50dp">
