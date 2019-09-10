@@ -80,7 +80,7 @@
         <Button
             android:padding="10dp"
             android:text="Adicionar"
-            android:id="@+id/btnAdicionarFabricante"
+            android:id="@+id/btnAdicionar"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/btnlogin"
             android:textColor="#ffffff"
