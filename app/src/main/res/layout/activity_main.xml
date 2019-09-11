@@ -83,7 +83,7 @@
         </Button>
         <Button
             android:text="Visualizar Fabricante"
-            android:id="@+id/btnFab"
+            android:id="@+id/btnVisFab"
             android:layout_margin="10dp"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/btncustom"
@@ -94,7 +94,7 @@
         </Button>
         <Button
             android:text="Visualizar Produtos"
-            android:id="@+id/btnProd"
+            android:id="@+id/btnVisProd"
             android:layout_margin="10dp"
             android:backgroundTint="#673AB7"
             android:textColor="#ffffff"
@@ -125,7 +125,7 @@
         </Button>
         <Button
             android:text="Visualizar Vendas"
-            android:id="@+id/btnVisualizaVendas"
+            android:id="@+id/btnVisVendas"
             android:layout_margin="10dp"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/btncustom"
@@ -136,7 +136,7 @@
         </Button>
         <Button
             android:text="Usuários"
-            android:id="@+id/btnUsuarioVendas"
+            android:id="@+id/btnUsuario"
             android:layout_margin="10dp"
             android:backgroundTint="#673AB7"
             android:background="@drawable/btncustom"

@@ -25,7 +25,7 @@ public class Categoria extends AppCompatActivity {
         edtCategoria = findViewById(R.id.edtCategoria);
         edtDescricao = findViewById(R.id.edtDescricao);
 
-        btnAdicionar = findViewById(R.id.btnAdicionarCategoria);
+        btnAdicionar = findViewById(R.id.btnAdicionar);
         btnSair = findViewById(R.id.btnSair);
 
         btnSair.setOnClickListener(new View.OnClickListener() {

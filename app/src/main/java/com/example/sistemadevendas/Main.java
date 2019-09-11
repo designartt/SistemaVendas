@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class Main extends AppCompatActivity {
 
-    Button btnCategoria, btnFabricante, btnProdutos, btnViewCategoria, btnFab, btnProd, btnVendas,
-            btnVisualizaVendas, btnUsuarioVendas, btnSairVendas, btnAdicionarFabricante;
+    Button btnCategoria, btnFabricante, btnProdutos, btnViewCategoria, btnVisFab, btnVisProd, btnVendas,
+            btnVisVendas, btnUsuario, btnSairVendas;
 
 
     @Override
@@ -21,13 +21,13 @@ public class Main extends AppCompatActivity {
         //region Todos os botões
         btnCategoria = findViewById(R.id.btnCategoria);
         btnViewCategoria = findViewById(R.id.btnVisCat);
-        btnFab = findViewById(R.id.btnFab);
         btnFabricante = findViewById(R.id.btnFabricante);
+        btnVisFab = findViewById(R.id.btnVisFab);
         btnProdutos = findViewById(R.id.btnProdutos);
-        btnProd = findViewById(R.id.btnProd);
+        btnVisProd = findViewById(R.id.btnVisProd);
         btnVendas = findViewById(R.id.btnVendas);
-        btnVisualizaVendas = findViewById(R.id.btnVisualizaVendas);
-        btnUsuarioVendas = findViewById(R.id.btnUsuarioVendas);
+        btnVisVendas = findViewById(R.id.btnVisVendas);
+        btnUsuario = findViewById(R.id.btnUsuario);
         btnSairVendas = findViewById(R.id.btnSairVendas);
         //endregion
 
@@ -41,14 +41,7 @@ public class Main extends AppCompatActivity {
         btnViewCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), viewCategoria.class);
-                startActivity(intent);
-            }
-        });
-        btnSairVendas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), login.class);
+                Intent intent = new Intent(Main.this, viewCategoria.class);
                 startActivity(intent);
             }
         });
@@ -56,10 +49,33 @@ public class Main extends AppCompatActivity {
         btnFabricante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Fabricante.class);
+                Intent intent = new Intent(Main.this, Fabricante.class);
                 startActivity(intent);
             }
         });
+
+        btnVisFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main.this, viewFabricante.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+        btnSairVendas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main.this, login.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
     }

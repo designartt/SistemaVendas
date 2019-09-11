@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class viewCategoria extends AppCompatActivity {
 
-    ListView listCategorias;
+    ListView lst1;
     ArrayList<String> title = new ArrayList<String>();
     ArrayAdapter arrayAdapter;
 
@@ -26,7 +26,7 @@ public class viewCategoria extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_categoria);
 
-        listCategorias = findViewById(R.id.listCategorias);
+        lst1 = findViewById(R.id.lst1);
         SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
         final Cursor c = db.rawQuery("select * from categoria", null);
         int id = c.getColumnIndex("id");
@@ -36,7 +36,7 @@ public class viewCategoria extends AppCompatActivity {
         title.clear();
 
         arrayAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, title);
-        listCategorias.setAdapter(arrayAdapter);
+        lst1.setAdapter(arrayAdapter);
         final ArrayList<cate> catee = new ArrayList<cate>();
 
         if (c.moveToNext()){
@@ -47,15 +47,13 @@ public class viewCategoria extends AppCompatActivity {
                 ca.descricao = c.getString(descricao);
                 catee.add(ca);
                 title.add(c.getString(id)+"\t" + c.getString(categoria)+"\t" + c.getString(descricao)+"\t");
-
-
             } while (c.moveToNext());
 
             arrayAdapter.notifyDataSetChanged();
-            listCategorias.invalidateViews();
+            lst1.invalidateViews();
         }
 
-        listCategorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lst1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 String aaa;

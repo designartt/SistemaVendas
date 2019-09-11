@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".editarfabricante">
+    tools:context=".EditarFabricante">
 
     <LinearLayout
         android:layout_marginBottom="35dp"

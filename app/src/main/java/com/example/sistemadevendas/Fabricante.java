@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class Fabricante extends AppCompatActivity {
 
 
-    EditText edtNome, edtDescricao;
+    EditText edtFab, edtFabSobre;
     Button btnAdicionar, btnSair;
 
 
@@ -24,16 +24,16 @@ public class Fabricante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fabricante);
 
-        edtNome = findViewById(R.id.edtCategoria);
-        edtDescricao = findViewById(R.id.edtDescricao);
+        edtFab = findViewById(R.id.edtFab);
+        edtFabSobre = findViewById(R.id.edtFabSobre);
 
-        btnAdicionar = findViewById(R.id.btnAdicionarCategoria);
+        btnAdicionar = findViewById(R.id.btnAdicionar);
         btnSair = findViewById(R.id.btnSair);
 
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Main.class);
+                Intent intent = new Intent(Fabricante.this, Main.class);
                 startActivity(intent);
             }
         });
@@ -49,22 +49,22 @@ public class Fabricante extends AppCompatActivity {
 
     private void insert(){
         try{
-            String nome = edtNome.getText().toString();
-            String descricao = edtDescricao.getText().toString();
+            String fabricante = edtFab.getText().toString();
+            String sobre = edtFabSobre.getText().toString();
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
-            db.execSQL("CREATE table if not exists fabricante(id integer primary key autoincrement, nome varchar, descricao varchar)");
+            db.execSQL("CREATE table if not exists fabricante(id integer primary key autoincrement, fabricante varchar, sobre varchar)");
 
-            String sql = "insert into categoria(categoria, descricao) values (?,?)";
+            String sql = "insert into fabricante(fabricante, sobre) values (?,?)";
             SQLiteStatement statement = db.compileStatement(sql);
-            statement.bindString(1, nome);
-            statement.bindString(2, descricao);
+            statement.bindString(1, fabricante);
+            statement.bindString(2, sobre);
             statement.execute();
-            Toast.makeText(this, "Cadastrado com Sucesso.", Toast.LENGTH_SHORT).show();
-            edtNome.setText("");
-            edtDescricao.setText("");
-            edtNome.requestFocus();
+            Toast.makeText(this, "Sucesso!!!", Toast.LENGTH_SHORT).show();
+            edtFab.setText("");
+            edtFabSobre.setText("");
+            edtFab.requestFocus();
         } catch (Exception ex){
-            Toast.makeText(this, "Fabricante não cadastrada.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro!!!", Toast.LENGTH_SHORT).show();
         }
     }
 }

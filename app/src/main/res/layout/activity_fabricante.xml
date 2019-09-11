@@ -37,7 +37,7 @@
         <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/edtFabricante"
+            android:id="@+id/edtFab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -60,7 +60,7 @@
         <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/edtSobreFabricante"
+            android:id="@+id/edtFabSobre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -80,7 +80,7 @@
         <Button
             android:padding="10dp"
             android:text="Adicionar"
-            android:id="@+id/btnAdicionarFabricante"
+            android:id="@+id/btnAdicionar"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/btnlogin"
             android:textColor="#ffffff"
