@@ -14,18 +14,16 @@ import android.widget.Toast;
 
 public class Fabricante extends AppCompatActivity {
 
-
-    EditText edtFab, edtFabSobre;
+    EditText edt1, edt2;
     Button btnAdicionar, btnSair;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fabricante);
 
-        edtFab = findViewById(R.id.edtFab);
-        edtFabSobre = findViewById(R.id.edtFabSobre);
+        edt1 = findViewById(R.id.edt1);
+        edt2 = findViewById(R.id.edt2);
 
         btnAdicionar = findViewById(R.id.btnAdicionar);
         btnSair = findViewById(R.id.btnSair);
@@ -33,7 +31,7 @@ public class Fabricante extends AppCompatActivity {
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Fabricante.this, Main.class);
+                Intent intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(intent);
             }
         });
@@ -49,8 +47,8 @@ public class Fabricante extends AppCompatActivity {
 
     private void insert(){
         try{
-            String fabricante = edtFab.getText().toString();
-            String sobre = edtFabSobre.getText().toString();
+            String fabricante =     edt1.getText().toString();
+            String sobre =          edt2.getText().toString();
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
             db.execSQL("CREATE table if not exists fabricante(id integer primary key autoincrement, fabricante varchar, sobre varchar)");
 
@@ -59,12 +57,12 @@ public class Fabricante extends AppCompatActivity {
             statement.bindString(1, fabricante);
             statement.bindString(2, sobre);
             statement.execute();
-            Toast.makeText(this, "Sucesso!!!", Toast.LENGTH_SHORT).show();
-            edtFab.setText("");
-            edtFabSobre.setText("");
-            edtFab.requestFocus();
+            Toast.makeText(this, "Cadastrado com Sucesso.", Toast.LENGTH_SHORT).show();
+            edt1.setText("");
+            edt2.setText("");
+            edt1.requestFocus();
         } catch (Exception ex){
-            Toast.makeText(this, "Erro!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro ao cadastrar!!!", Toast.LENGTH_SHORT).show();
         }
     }
 }

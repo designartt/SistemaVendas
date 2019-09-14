@@ -9,7 +9,7 @@
     tools:context=".viewFabricante">
 
     <ListView
-        android:id="@+id/listaFab"
+        android:id="@+id/lst2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="46dp"

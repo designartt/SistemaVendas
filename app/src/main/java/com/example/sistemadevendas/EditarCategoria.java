@@ -23,9 +23,9 @@ public class EditarCategoria extends AppCompatActivity {
         setContentView(R.layout.activity_editarcategoria);
 
 //        Setando os ids dos EditText
-        edtID = findViewById(R.id.edtCatId);
-        edt1 = findViewById(R.id.edtCategoria);
-        edt2 = findViewById(R.id.edtDescricao);
+        edtID = findViewById(R.id.edtID);
+        edt1 = findViewById(R.id.edt1);
+        edt2 = findViewById(R.id.edt2);
 
 //        Setando os ids do Button
         btnEditar = findViewById(R.id.btnEditar);
@@ -88,7 +88,7 @@ public class EditarCategoria extends AppCompatActivity {
             startActivity(intent);
 
         } catch (Exception ex) {
-            Toast.makeText(this, "Categoria não atualizada.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro ao Atualizar!!!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -106,7 +106,7 @@ public class EditarCategoria extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), Main.class);
             startActivity(i);
         } catch (Exception ex){
-            Toast.makeText(this, "Categoria não deletada!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro ao Deletar!!!", Toast.LENGTH_SHORT).show();
         }
     }
 }

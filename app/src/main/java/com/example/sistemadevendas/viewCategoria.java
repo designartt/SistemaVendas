@@ -30,8 +30,8 @@ public class viewCategoria extends AppCompatActivity {
         SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
         final Cursor c = db.rawQuery("select * from categoria", null);
         int id = c.getColumnIndex("id");
-        int categoria = c.getColumnIndex("categoria");
-        int descricao = c.getColumnIndex("descricao");
+        int categoria =     c.getColumnIndex("categoria");
+        int descricao =     c.getColumnIndex("descricao");
 
         title.clear();
 

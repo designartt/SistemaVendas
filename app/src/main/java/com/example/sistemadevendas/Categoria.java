@@ -47,8 +47,8 @@ public class Categoria extends AppCompatActivity {
 
     private void insert(){
         try{
-            String categoria = edtCategoria.getText().toString();
-            String descricao = edtDescricao.getText().toString();
+            String categoria =      edtCategoria.getText().toString();
+            String descricao =      edtDescricao.getText().toString();
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
             db.execSQL("CREATE table if not exists categoria(id integer primary key autoincrement, categoria varchar, descricao varchar)");
 
@@ -62,7 +62,7 @@ public class Categoria extends AppCompatActivity {
             edtDescricao.setText("");
             edtCategoria.requestFocus();
         } catch (Exception ex){
-            Toast.makeText(this, "Categoria não cadastrada.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro ao cadastrar!!!", Toast.LENGTH_SHORT).show();
         }
     }
 }

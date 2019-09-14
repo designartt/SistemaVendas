@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class viewFabricante extends AppCompatActivity {
 
-    ListView listaFab;
+    ListView lst2;
     ArrayList<String> title = new ArrayList<String>();
     ArrayAdapter arrayAdapter;
 
@@ -25,17 +25,17 @@ public class viewFabricante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_fabricante);
 
-        listaFab = findViewById(R.id.listaFab);
+        lst2 = findViewById(R.id.lst2);
         SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
         final Cursor c = db.rawQuery("select * from fabricante", null);
-        int id = c.getColumnIndex("id");
-        int fabricante = c.getColumnIndex("fabricante");
-        int sobre = c.getColumnIndex("sobre");
+        int id =            c.getColumnIndex("id");
+        int fabricante =    c.getColumnIndex("fabricante");
+        int sobre =         c.getColumnIndex("sobre");
 
         title.clear();
 
         arrayAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, title);
-        listaFab.setAdapter(arrayAdapter);
+        lst2.setAdapter(arrayAdapter);
         final ArrayList<fab> brann = new ArrayList<fab>();
 
         if (c.moveToNext()){
@@ -49,15 +49,15 @@ public class viewFabricante extends AppCompatActivity {
             } while (c.moveToNext());
 
             arrayAdapter.notifyDataSetChanged();
-            listaFab.invalidateViews();
+            lst2.invalidateViews();
         }
 
-        listaFab.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lst2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                String aaa;
                 int position = 0;
-                String fff = title.get(position).toString();
+                aaa = title.get(position).toString();
                 fab fa = brann.get((i));
 
                 Intent in = new Intent(getApplicationContext(), EditarFabricante.class);

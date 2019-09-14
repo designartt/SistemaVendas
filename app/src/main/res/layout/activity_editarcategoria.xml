@@ -35,7 +35,7 @@
         <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/edtCatId"
+            android:id="@+id/edtID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -59,7 +59,7 @@
         <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/edtCategoria"
+            android:id="@+id/edt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -82,7 +82,7 @@
         <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/edtDescricao"
+            android:id="@+id/edt2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
