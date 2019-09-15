@@ -23,9 +23,9 @@ public class EditarFabricante extends AppCompatActivity {
         setContentView(R.layout.activity_editarfabricante);
 
         //        Setando os ids dos EditText
-        edtID = findViewById(R.id.edtID);
-        edt1 = findViewById(R.id.edt1);
-        edt2 = findViewById(R.id.edt2);
+        edtID = findViewById(R.id.edtFabID);
+        edt1 = findViewById(R.id.edtFabricante);
+        edt2 = findViewById(R.id.edtSobreFab);
 
 //        Setando os ids do Button
         btnEditar = findViewById(R.id.btnEditar);
@@ -46,14 +46,14 @@ public class EditarFabricante extends AppCompatActivity {
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditarFabricante();
+                Editar();
             }
         });
 
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DeletarFabricante();
+                Deletar();
             }
         });
 
@@ -67,7 +67,7 @@ public class EditarFabricante extends AppCompatActivity {
 
     }
 
-    public void EditarFabricante() {
+    public void Editar() {
 
         try {
             int id = Integer.parseInt(edtID.getText().toString());
@@ -88,25 +88,25 @@ public class EditarFabricante extends AppCompatActivity {
             startActivity(intent);
 
         } catch (Exception ex) {
-            Toast.makeText(this, "Categoria não atualizada.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro, não foi possível cadastrar.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void DeletarFabricante(){
+    public void Deletar(){
         try{
-            String id = edtID.getText().toString();
+            int id = Integer.parseInt(edtID.getText().toString());
 
             SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
             String sql = "delete from fabricante where id=?";
             SQLiteStatement statement = db.compileStatement(sql);
-            statement.bindString(1, id);
+            statement.bindLong(1, id);
             statement.execute();
             Toast.makeText(this, "Cadastrado deletado com Sucesso.", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(getApplicationContext(), viewFabricante.class);
             startActivity(i);
         } catch (Exception ex){
-            Toast.makeText(this, "Categoria não deletada!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro, não foi possível deletar.", Toast.LENGTH_SHORT).show();
         }
     }
 }

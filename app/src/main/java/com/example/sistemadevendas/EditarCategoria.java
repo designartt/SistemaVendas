@@ -23,7 +23,7 @@ public class EditarCategoria extends AppCompatActivity {
         setContentView(R.layout.activity_editarcategoria);
 
 //        Setando os ids dos EditText
-        edtID = findViewById(R.id.edtID);
+        edtID = findViewById(R.id.edtCatID);
         edt1 = findViewById(R.id.edt1);
         edt2 = findViewById(R.id.edt2);
 

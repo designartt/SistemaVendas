@@ -22,8 +22,8 @@ public class Fabricante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fabricante);
 
-        edt1 = findViewById(R.id.edt1);
-        edt2 = findViewById(R.id.edt2);
+        edt1 = findViewById(R.id.edtFabNome);
+        edt2 = findViewById(R.id.edtFabSobre);
 
         btnAdicionar = findViewById(R.id.btnAdicionar);
         btnSair = findViewById(R.id.btnSair);

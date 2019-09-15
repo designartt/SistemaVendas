@@ -37,7 +37,7 @@
         <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/edt1"
+            android:id="@+id/edtFabNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -60,7 +60,7 @@
         <!--        </TextView>-->
 
         <EditText
-            android:id="@+id/edt2"
+            android:id="@+id/edtFabSobre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

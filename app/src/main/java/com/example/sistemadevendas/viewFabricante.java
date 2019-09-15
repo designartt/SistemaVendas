@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class viewFabricante extends AppCompatActivity {
 
-    ListView lst2;
+    ListView lstFabricante;
     ArrayList<String> title = new ArrayList<String>();
     ArrayAdapter arrayAdapter;
 
@@ -25,7 +25,7 @@ public class viewFabricante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_fabricante);
 
-        lst2 = findViewById(R.id.lst2);
+        lstFabricante = findViewById(R.id.lstFab);
         SQLiteDatabase db = openOrCreateDatabase("supervenda", Context.MODE_PRIVATE, null);
         final Cursor c = db.rawQuery("select * from fabricante", null);
         int id =            c.getColumnIndex("id");
@@ -35,8 +35,8 @@ public class viewFabricante extends AppCompatActivity {
         title.clear();
 
         arrayAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, title);
-        lst2.setAdapter(arrayAdapter);
-        final ArrayList<fab> brann = new ArrayList<fab>();
+        lstFabricante.setAdapter(arrayAdapter);
+        final ArrayList<fab> fabri = new ArrayList<fab>();
 
         if (c.moveToNext()){
             do {
@@ -44,21 +44,21 @@ public class viewFabricante extends AppCompatActivity {
                 fa.id = c.getString(id);
                 fa.fabricante = c.getString(fabricante);
                 fa.sobre = c.getString(sobre);
-                brann.add(fa);
+                fabri.add(fa);
                 title.add(c.getString(id)+"\t" + c.getString(fabricante)+"\t" + c.getString(sobre)+"\t");
             } while (c.moveToNext());
 
             arrayAdapter.notifyDataSetChanged();
-            lst2.invalidateViews();
+            lstFabricante.invalidateViews();
         }
 
-        lst2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lstFabricante.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
                 String aaa;
                 int position = 0;
                 aaa = title.get(position).toString();
-                fab fa = brann.get((i));
+                fab fa = fabri.get((i));
 
                 Intent in = new Intent(getApplicationContext(), EditarFabricante.class);
                 in.putExtra("id", fa.id);
